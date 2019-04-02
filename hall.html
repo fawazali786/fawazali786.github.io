@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Title of this webpage -->
+<title>Hall of Fame</title>
+<!-- Link of the CSS applied -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Top-bar -->
+<div class="top-bar">
+<div class="top-bar-left">
+<ul class="menu">
+<li class="menu-text" style="color:white">Hall of Fame</li>
+<li><a href="index.html">Home</a></li>
+<li><a href="shop.html">Shop</a></li>
+<li><a href="live.html">Live Cricket</a></li>
+</ul>
+</div>
+<div class="top-bar-right">
+<ul class="menu">
+<li><a href="fixtures.html">Fixtures</a></li>
+<li><a href="rankings.html">Rankings</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="hall.html">Hall of Fame</a></li>
+</ul>
+</div>
+</div>
+<!-- Heading of this webpage -->
+<h1 align="center">CRICKET HALL OF FAME!</h1>
+<!-- My slideshow with the images of some cricketers -->
+<div class"row">
+<div class = "column">
+<div class="slideshow-container">
+ <div class="mySlides fade">
+    <div class="numbertext">1 / 9</div>
+		<p style="font-size:30px">Imran khan!</p>
+      <img src="images/fame1.jpg" style="width:1300px;height;900px">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 9</div>
+	<p style="font-size:30px">Shohaib Akhtar!</p>
+      <img src="images/fame2.jpg" style="width:1300px;height;900px">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 9</div>
+	<p style="font-size:30px">Ricky Ponting!</p>
+      <img src="images/fame3.jpg" style="width:1300px;height;900px">
+  </div>
+
+ 
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 9</div>
+	<p style="font-size:30px">Vivian Richards!</p>
+      <img src="images/fame4.jpg" style="width:1300px;height;900px">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">5 / 9</div>
+	<p style="font-size:30px">Shane Warne!</p>
+      <img src="images/fame5.jpg" style="width:1300px;height;900px">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">6 / 9</div>
+	<p style="font-size:30px">Waseem Akram!</p>
+      <img src="images/fame6.jpg" style="width:1300px;height;900px">
+  </div>
+ 
+ <div class="mySlides fade">
+    <div class="numbertext">7 / 9</div>
+	<p style="font-size:30px">AB Devilliers!</p>
+      <img src="images/fame7.jpg" style="width:1300px;height;900px">
+  </div>
+  
+   <div class="mySlides fade">
+    <div class="numbertext">8 / 9</div>
+	<p style="font-size:30px">Brain Lara!</p>
+      <img src="images/fame8.jpg" style="width:1300px;height;900px">
+  </div>
+  
+   <div class="mySlides fade">
+    <div class="numbertext">9 / 9</div>
+	<p style="font-size:30px">Chris Gayle!</p>
+      <img src="images/fame9.jpeg" style="width:1300px;height;900px">
+  </div>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span>
+   <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span> 
+   <span class="dot" onclick="currentSlide(7)"></span> 
+  <span class="dot" onclick="currentSlide(8)"></span> 
+  <span class="dot" onclick="currentSlide(9)"></span> 
+</div>
+</div>
+<div class = "column">
+</body>
+<!-- This is the script that I added to this webpage. It will automatically change the iamges in the slideshow every two seconds-->
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none"; 
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1} 
+  slides[slideIndex-1].style.display = "block"; 
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+</html>

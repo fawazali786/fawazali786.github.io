@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Title of this webpage -->
+<title>Conatct Us</title>
+<!-- CSS that I applied to the webpage -->
+<link rel="stylesheet" href="style.css">
+<!-- Additioanal styling tags suitable for this page only -->
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+label {
+    display: block;
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.8;
+    color: white;
+}
+.container {
+  border-radius: 5px;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<!-- This is my top-bar -->
+<div class="top-bar">
+<div class="top-bar-left">
+<ul class="menu">
+<li class="menu-text" style="color:white">Home</li>
+<li><a href="index.html">Home</a></li>
+<li><a href="shop.html">Shop</a></li>
+<li><a href="live.html">Live Cricket</a></li>
+</ul>
+</div>
+<div class="top-bar-right">
+<ul class="menu">
+<li><a href="fixtures.html">Fixtures</a></li>
+<li><a href="rankings.html">Rankings</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="hall.html">Hall of Fame</a></li>
+</ul>
+</div>
+</div>
+
+
+<h3 style="margin-left:20px">Contact Us</h3>
+
+<div class="container">
+  <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+    <label for="fname">Full Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your full name..">
+	
+	 <label for="phone">Phone Number</label>
+    <input type="number" id="phone" name="phonenumber" placeholder="eg. 0123 456789">
+	
+	 <label for="email">E-mail</label>
+    <input type="text" id="email" name="email" placeholder="eg. yourname@gmail.com">
+
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Write a message for us.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+	
+  </form>
+</div>
+
+</body>
+<!-- This is the script that I added to my contact form, it will make sure that the user has filled in all the
+fields before pressing the submit button -->
+<script type = "text/javascript">
+  
+      function validateForm() {
+      
+         if( document.myForm.firstname.value == "" ) {
+            alert( "Please provide your name!" );
+            document.myForm.firstname.focus() ;
+            return false;
+         }
+         if( document.myForm.phonenumber.value == "" ) {
+            alert( "Please provide your Phone Number!" );
+            document.myForm.phonenumber.focus() ;
+            return false;
+		}
+		 if( document.myForm.email.value == "" ) {
+            alert( "Please provide your Email!" );
+            document.myForm.email.focus() ;
+            return false;
+		}
+		 if( document.myForm.message.value == "" ) {
+            alert( "Please provide your Message!" );
+            document.myForm.message.focus() ;
+            return false;
+         }
+		 
+         return( true );
+      }
+</script>
+</html>

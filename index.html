@@ -1,0 +1,138 @@
+<!doctype html>
+<!-- This is my website -->
+<html lang="en">
+<head>
+<!-- /-->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- This is the title of this webpage-->
+<title>My cricket webiste</title>
+<!-- Link to the CSS that I apllied to my website -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body onload="startTime()">
+<!-- This is my top bar -->
+<div class="top-bar">
+<div class="top-bar-left">
+<ul class="menu">
+<li class="menu-text" style="color:white">Home</li>
+<li><a href="index.html">Home</a></li>
+<li><a href="shop.html">Shop</a></li>
+<li><a href="live.html">Live Cricket</a></li>
+</ul>
+</div>
+<div class="top-bar-right">
+<ul class="menu">
+<li><a href="fixtures.html">Fixtures</a></li>
+<li><a href="rankings.html">Rankings</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="hall.html">Hall of Fame</a></li>
+</ul>
+</div>
+</div>
+<!-- This is where I will add date, time and greetings using Java Script. -->
+<div class= clock>
+	<h3 id="greeting" style="color:black;font-weight:bold;font-size:45px"></h3>
+	<h3 id="showDate" style="color:black;font-weight:bold;font-size:40px"></h3>
+	<h3 id="showTime" style="color:black;font-weight:bold;font-size:30px"></h3>
+</div>
+</div>
+<div class="row">
+<div class="medium-6 columns medium-push-6">
+<img class="thumbnail" src="images/cricball.jpg" style="width:1000px">
+</div>
+<div class="medium-6 columns medium-pull-6">
+<h2 style= "font-size:60px; font-weight:bold">My Cricket Website</h2>
+<p style="font-size: 30px" align="justify">Welcome to my cricket website. Here you can find infromation about the latest cricket events, news and much more. </p>
+</div>
+</div>
+<div class="row">
+<div class="medium-4 columns">
+<h3>Latest News</h3>
+<p>Crciekt World Cup 2019 about to begin. The first match will be played between England and South Africa in The Oval, London.</p>
+</div>
+<div class="medium-4 columns">
+<h3>Stock</h3>
+<p>We have now the latest cricket clothes and accessories in stock. Make sure to check them out.</p>
+</div>
+<div class="medium-4 columns">
+<h3>Tournament</h3>
+<p>A local cricket tournamnet has been arranged by the us. To participate call us on +44 7456743821</p>
+</div>
+</div>
+
+<div class="row column">
+<h3>Latest items</h3>
+</div>
+<div class="row medium-up-3 large-up-4">
+<div class="column">
+<img class="thumbnail" src="images/shirt.jpg" style="width:200px;height:200px">
+<p>Crciket top</p>
+</div>
+<div class="column">
+<img class="thumbnail" src="images/jersey.jpg" style="width:200px;height:200px">
+<p>Pakistani Team Jersey</p>
+</div>
+<div class="column">
+<img class="thumbnail" src="images/trousers.jpg" style="width:200px;height:200px">
+<p>Cricket Trousers</p>
+</div>
+<div class="column">
+<img class="thumbnail" src="images/clothes.jpg" style="width:200px;height:200px">
+<p>Our Team's Kit</p>
+</div>
+
+<hr>
+<div class="row column">
+<ul class="menu">
+<!-- Link to the contact us form -->
+<li><a href="contact.html">Contact Us</a></li>
+
+</ul>
+</div>
+
+</body>
+<!-- Now I am going to add a script to my website. This will allow me to display date, time and a greeting depending on the time of the day -->
+<script>
+<!-- This is the array that contains my greetings -->
+var greetingArray = ["Good Morning!!","Good Afternoon!!","Good Evening!!"];
+<!-- This is used to get date into my website -->
+var d = new Date();
+
+var date = d.getDate();
+var month = d.getMonth();
+var year = d.getFullYear();
+
+document.getElementById("showDate").innerHTML = date + "/" + month + "/" + year;
+<!-- This will display the live time on my webpage -->
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById("showTime").innerHTML = h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i}; // add zero in front of numbers < 10
+  return i;
+}
+<!-- This will display the greeting on my webpage depending on the itme of the day -->
+var greeting;
+var time = new Date().getHours();
+if (time < 12) {
+	greeting = greetingArray[0];
+   //greeting = "Good Morning!!";
+  } else if (time < 16) {
+	greeting = greetingArray[1];
+   //greeting = "Good Afternoon!!";
+  } else {
+	greeting = greetingArray[2];
+   //greeting = "Good Evening!!";
+  }
+  document.getElementById("greeting").innerHTML = greeting;
+</script>
+
+</html>
